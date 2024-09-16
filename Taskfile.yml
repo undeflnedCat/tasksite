@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - python ./tasksite.py
+  
+  localhost:
+    dir: _site
+    cmds:
+      - task: default
+      - python -m http.server
+  
+  push:
+    cmds:
+      - task: default
+    
